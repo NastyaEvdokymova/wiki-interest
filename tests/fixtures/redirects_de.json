@@ -1,0 +1,24 @@
+{
+ "batchcomplete": true,
+ "query": {
+  "pages": [
+   {
+    "pageid": 4968928,
+    "ns": 0,
+    "title": "Intermittierendes Fasten",
+    "redirects": [
+     {
+      "pageid": 9388945,
+      "ns": 0,
+      "title": "Intervallfasten"
+     },
+     {
+      "pageid": 10689631,
+      "ns": 0,
+      "title": "Kurzzeitfasten"
+     }
+    ]
+   }
+  ]
+ }
+}

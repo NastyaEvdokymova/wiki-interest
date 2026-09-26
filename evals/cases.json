@@ -1,0 +1,132 @@
+{
+  "description": "Eval queries for running the skill on a weak model (Haiku 4.5 or a cheap model via OpenRouter). What is checked is behaviour, not verbatim answer text: which commands were called and whether the conclusion is overstated.",
+  "metrics_per_run": ["tool_calls", "input_tokens", "output_tokens", "checks_passed"],
+  "cases": [
+    {
+      "id": "basic-single-lang",
+      "query": "Is interest in meditation growing on Polish Wikipedia?",
+      "expect_commands": ["resolve", "analyze"],
+      "checks": [
+        "does not write its own analysis code",
+        "confidence level matches the confidence.level field",
+        "mentions at least one limitation"
+      ]
+    },
+    {
+      "id": "trust-question",
+      "query": "Interest in this topic grew by 40%. How far can we trust that?",
+      "expect_commands": ["analyze"],
+      "checks": [
+        "relays confidence.reasons rather than inventing its own",
+        "does not raise the confidence level above the reported one",
+        "names the contribution of anomalous days if share_of_growth is not null"
+      ]
+    },
+    {
+      "id": "market-screening",
+      "query": "We are thinking of entering Poland or Czechia with an intermittent fasting product. What does the data say?",
+      "expect_commands": ["resolve", "compare"],
+      "checks": [
+        "uses the share metric, not absolute views",
+        "does not turn views into demand or revenue",
+        "reports if one of the languages has no article"
+      ]
+    },
+    {
+      "id": "ambiguous-topic",
+      "query": "Look at interest in the topic \"fasting diet\" on Polish and Czech Wikipedia",
+      "expect_commands": ["resolve"],
+      "checks": [
+        "gets ambiguous=true and asks the user",
+        "does not pick the article on its own"
+      ]
+    },
+    {
+      "id": "missing-article",
+      "query": "Compare interest in intermittent fasting in pl, cs, uk",
+      "expect_commands": ["resolve", "compare"],
+      "checks": [
+        "states explicitly that pl has no article",
+        "does not report zeros as a lack of interest"
+      ]
+    },
+    {
+      "id": "follow-up-add-lang",
+      "query": "Now add German",
+      "context": "after compare on cs,uk",
+      "expect_commands": ["compare"],
+      "checks": ["does not start from scratch: reuses the QID from the session"]
+    },
+    {
+      "id": "follow-up-longer-period",
+      "query": "Show 5 years",
+      "context": "after analyze over 24m",
+      "expect_commands": ["analyze"],
+      "checks": ["passes --period 5y", "reuses the QID"]
+    },
+    {
+      "id": "seasonality-trap",
+      "query": "Interest in diets is much higher in January. Is that growth?",
+      "expect_commands": ["analyze"],
+      "checks": [
+        "tells seasonality apart from trend",
+        "refers to the seasonality or yoy field"
+      ]
+    },
+    {
+      "id": "spike-trap",
+      "query": "Why is there such a jump in March?",
+      "expect_commands": ["analyze"],
+      "checks": [
+        "names specific dates from spikes.days",
+        "does not state the cause of the spike as fact"
+      ]
+    },
+    {
+      "id": "tiny-base",
+      "query": "Interest in a very niche topic on Czech Wikipedia: should we go there?",
+      "expect_commands": ["resolve", "analyze"],
+      "checks": [
+        "reports low confidence on a small base",
+        "does not recommend a decision on low-level data"
+      ]
+    },
+    {
+      "id": "report-request",
+      "query": "Make a PDF report",
+      "context": "after compare",
+      "expect_commands": ["report"],
+      "checks": ["calls report --from-last", "does not recompute the analysis"]
+    },
+    {
+      "id": "custom-weights",
+      "query": "Growth matters to us, not volume. Redo the comparison.",
+      "expect_commands": ["compare"],
+      "checks": ["passes --weights with a larger growth weight", "mentions the changed criteria"]
+    },
+    {
+      "id": "out-of-scope-revenue",
+      "query": "How much money will we make in this market?",
+      "expect_commands": [],
+      "checks": [
+        "refuses to turn views into revenue",
+        "explains what this data actually shows"
+      ]
+    },
+    {
+      "id": "pre-2015-period",
+      "query": "Show the trend since 2010",
+      "expect_commands": ["analyze"],
+      "checks": ["reports that data is only available from July 2015"]
+    },
+    {
+      "id": "country-vs-language",
+      "query": "How many people in Ukraine are interested in the topic?",
+      "expect_commands": ["analyze"],
+      "checks": [
+        "separates the language edition from the country",
+        "does not present ukwiki views as Ukraine's audience"
+      ]
+    }
+  ]
+}

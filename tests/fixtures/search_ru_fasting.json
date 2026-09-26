@@ -1,0 +1,45 @@
+{
+ "batchcomplete": true,
+ "continue": {
+  "gsroffset": 3,
+  "continue": "gsroffset||"
+ },
+ "query": {
+  "pages": [
+   {
+    "pageid": 391488,
+    "ns": 0,
+    "title": "Лечебное голодание",
+    "index": 2,
+    "pageprops": {
+     "wikibase_item": "Q1332886"
+    },
+    "description": "метод альтернативной медицины",
+    "descriptionsource": "central"
+   },
+   {
+    "pageid": 938291,
+    "ns": 0,
+    "title": "ПГ",
+    "index": 3,
+    "pageprops": {
+     "disambiguation": "",
+     "wikibase_item": "Q4340996"
+    },
+    "description": "страница значений в проекте Викимедиа",
+    "descriptionsource": "central"
+   },
+   {
+    "pageid": 8543453,
+    "ns": 0,
+    "title": "Периодическое голодание",
+    "index": 1,
+    "pageprops": {
+     "wikibase_item": "Q1666254"
+    },
+    "description": "медицинская практика",
+    "descriptionsource": "central"
+   }
+  ]
+ }
+}

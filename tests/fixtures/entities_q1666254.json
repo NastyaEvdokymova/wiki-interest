@@ -1,0 +1,49 @@
+{
+ "entities": {
+  "Q1666254": {
+   "type": "item",
+   "id": "Q1666254",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "intermittent fasting"
+    },
+    "uk": {
+     "language": "uk",
+     "value": "Інтервальне голодування"
+    },
+    "cs": {
+     "language": "cs",
+     "value": "Přerušovaný půst"
+    },
+    "ru": {
+     "language": "ru",
+     "value": "Периодическое голодание"
+    }
+   },
+   "descriptions": {
+    "en": {
+     "language": "en",
+     "value": "a diet that cycles between a period of fasting and non-fasting"
+    },
+    "ru": {
+     "language": "ru",
+     "value": "медицинская практика"
+    }
+   },
+   "sitelinks": {
+    "cswiki": {
+     "site": "cswiki",
+     "title": "Přerušovaný půst",
+     "badges": []
+    },
+    "ukwiki": {
+     "site": "ukwiki",
+     "title": "Інтервальне голодування",
+     "badges": []
+    }
+   }
+  }
+ },
+ "success": 1
+}
