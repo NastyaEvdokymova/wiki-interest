@@ -19,6 +19,13 @@ with no dependencies to install. matplotlib and reportlab are needed only for
 `chart` and `report`. The skill ships no compiled files; the environment is reproduced from
 `pyproject.toml` + `uv.lock`.
 
+## Examples
+
+The three requests from the task, with charts and one-page PDF reports:
+[`examples/README.md`](examples/README.md).
+
+![Learning English: pl/cs/uk/de](examples/03-learning-english/chart.png)
+
 ## What is where
 
 | Path | What it is |
@@ -28,6 +35,7 @@ with no dependencies to install. matplotlib and reportlab are needed only for
 | `scripts/wikitrends.py` | single CLI entry point |
 | `references/` | methodology and data limitations, read by the agent on request |
 | `tests/` | 29 tests: synthetic data with known answers + recorded API responses |
+| `examples/` | the three task examples: chart, one-page PDF and raw CLI output for each |
 | `evals/` | a set of 15 eval queries and runs on Haiku 4.5 |
 | `RUNBOOK.md` | what to run in which order and how to demo it |
 | `ROADMAP.md` | how to develop it further |

@@ -78,7 +78,9 @@ def assess(analysis: dict) -> dict:
     # 5. Seasonality
     if season.get("detected"):
         peaks = ", ".join(str(m) for m in season.get("peak_months", []))
-        note = f"strong seasonality (amplitude {season['amplitude']}, peak months {peaks})"
+        note = f"strong seasonality (amplitude {season['amplitude']}"
+        # No month may reach the 1.2 peak index even when the spread is wide.
+        note += f", peak months {peaks})" if peaks else ")"
         if months_used < 24:
             warnings += 1
             note += "; on a short series it is easy to mistake for a trend"

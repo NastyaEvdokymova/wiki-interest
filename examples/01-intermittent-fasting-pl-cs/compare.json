@@ -1,0 +1,59 @@
+{
+ "qid": "Q1666254",
+ "label": "intermittent fasting",
+ "period": "24m",
+ "metric": "share",
+ "ranking": [
+  {
+   "lang": "cs",
+   "title": "Přerušovaný půst",
+   "share_per_million": 3.04,
+   "change_pct_per_year": -47.2,
+   "significant": true,
+   "confidence": "medium",
+   "score": 0.537
+  }
+ ],
+ "excluded": [
+  {
+   "lang": "pl",
+   "reason": "no article in this language edition"
+  }
+ ],
+ "recommendation": {
+  "text": "Top candidate: cs (score 0.537): 3.04 views per million, trend -47.2% per year, confidence medium. Research next: cs.",
+  "criteria": "volume=0.5, growth=0.5, min_confidence=low, min_views=0",
+  "why": [
+   "cs: score 0.537; volume 3.04 per million (100% of the leader); trend -47.2% per year counts toward the score; confidence medium"
+  ],
+  "research_next": [
+   "cs"
+  ]
+ },
+ "verdicts": [
+  "pl: not enough data (no article in this language edition)",
+  "cs: interest is declining by 47.2% per year (~3.04 views per million); confidence medium"
+ ],
+ "confidence_by_lang": {
+  "pl": {
+   "level": "low",
+   "reasons": [
+    "no article in this language edition"
+   ]
+  },
+  "cs": {
+   "level": "medium",
+   "reasons": [
+    "small base: ~183 views/month, sensitive to noise",
+    "significant decline (p=0.0004), -47.2% per year",
+    "strong seasonality (amplitude 1.65, peak months 1, 4, 8, 9, 10)"
+   ]
+  }
+ },
+ "limitations": [
+  "Wikipedia page views are a signal of attention, not of willingness to pay.",
+  "Share per million compares language editions, not country audiences: readers of an edition can live anywhere.",
+  "Some bot traffic is not caught by the agent=user filter.",
+  "Since 2024 overall Wikipedia views have been falling due to AI answers in search; per-edition normalisation compensates for this only partially."
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "qid": "Q1860",
+ "label": "English",
+ "period": "24m",
+ "metric": "share",
+ "ranking": [
+  {
+   "lang": "uk",
+   "title": "Англійська мова",
+   "share_per_million": 119.54,
+   "change_pct_per_year": -16.0,
+   "significant": true,
+   "confidence": "high",
+   "score": 0.652
+  },
+  {
+   "lang": "cs",
+   "title": "Angličtina",
+   "share_per_million": 48.3,
+   "change_pct_per_year": -12.3,
+   "significant": true,
+   "confidence": "high",
+   "score": 0.425
+  },
+  {
+   "lang": "pl",
+   "title": "Język angielski",
+   "share_per_million": 43.52,
+   "change_pct_per_year": -9.7,
+   "significant": true,
+   "confidence": "high",
+   "score": 0.417
+  },
+  {
+   "lang": "de",
+   "title": "Englische Sprache",
+   "share_per_million": 34.4,
+   "change_pct_per_year": -0.3,
+   "significant": false,
+   "confidence": "medium",
+   "score": 0.353
+  }
+ ],
+ "excluded": [],
+ "recommendation": {
+  "text": "Top candidate: uk (score 0.652): 119.54 views per million, trend -16.0% per year, confidence high. Next: cs (score 0.425). Research next: uk, cs, pl.",
+  "criteria": "growth=0.6, volume=0.4, min_confidence=low, min_views=0",
+  "why": [
+   "uk: score 0.652; volume 119.54 per million (100% of the leader); trend -16.0% per year counts toward the score; confidence high",
+   "cs: score 0.425; volume 48.3 per million (40% of the leader); trend -12.3% per year counts toward the score; confidence high",
+   "pl: score 0.417; volume 43.52 per million (36% of the leader); trend -9.7% per year counts toward the score; confidence high",
+   "de: score 0.353; volume 34.4 per million (29% of the leader); trend not significant, so it adds nothing for growth; confidence medium"
+  ],
+  "research_next": [
+   "uk",
+   "cs",
+   "pl"
+  ]
+ },
+ "verdicts": [
+  "pl: interest is declining by 9.7% per year (~43.52 views per million); confidence high",
+  "cs: interest is declining by 12.3% per year (~48.3 views per million); confidence high",
+  "uk: interest is declining by 16.0% per year (~119.54 views per million); confidence high",
+  "de: interest is stable (~34.4 views per million), no significant trend; confidence medium"
+ ],
+ "confidence_by_lang": {
+  "pl": {
+   "level": "high",
+   "reasons": [
+    "significant decline (p=0.0007), -9.7% per year"
+   ]
+  },
+  "cs": {
+   "level": "high",
+   "reasons": [
+    "significant decline (p=0.0005), -12.3% per year"
+   ]
+  },
+  "uk": {
+   "level": "high",
+   "reasons": [
+    "significant decline (p<0.0001), -16.0% per year",
+    "strong seasonality (amplitude 0.32)"
+   ]
+  },
+  "de": {
+   "level": "medium",
+   "reasons": [
+    "trend not statistically significant (p=0.9407): changes are indistinguishable from noise"
+   ]
+  }
+ },
+ "limitations": [
+  "Wikipedia page views are a signal of attention, not of willingness to pay.",
+  "Share per million compares language editions, not country audiences: readers of an edition can live anywhere.",
+  "Some bot traffic is not caught by the agent=user filter.",
+  "Since 2024 overall Wikipedia views have been falling due to AI answers in search; per-edition normalisation compensates for this only partially."
+ ]
+}

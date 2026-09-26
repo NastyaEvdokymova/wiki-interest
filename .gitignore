@@ -4,3 +4,5 @@ __pycache__/
 .pytest_cache/
 *.pdf
 *.png
+!examples/**/*.pdf
+!examples/**/*.png
